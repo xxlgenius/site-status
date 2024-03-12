@@ -8,7 +8,8 @@ WORKDIR /app
 COPY . /app
 
 # 安装所需的依赖
-RUN apk add --no-cache nodejs && npm install
+RUN apk add --no-cache nodejs &&\
+npm install
 
 
 # 暴露应用程序的端口
