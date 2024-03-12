@@ -5,15 +5,13 @@ FROM alpine:latest
 WORKDIR /app
 
 # 复制应用程序文件到容器中
-COPY . /app
+COPY /dist /app
 
-# 安装所需的依赖
-RUN apk add --no-cache nodejs &&\
-npm install
-
+# # 安装所需的依赖
+RUN apk add npm && npm install -g http-server  
 
 # 暴露应用程序的端口
-EXPOSE 6598
+EXPOSE 8080
 
-# 运行应用程序
-CMD ["npm dev"]
+# # 运行应用程序
+CMD http-server
