@@ -8,11 +8,11 @@ WORKDIR /app
 COPY . /app
 
 # 安装所需的依赖
-RUN apk add --no-cache nodejs && npm install pnpm -g && pnpm install && pnpm dev
+RUN apk add --no-cache nodejs && npm install
 
 
 # 暴露应用程序的端口
 EXPOSE 6598
 
 # 运行应用程序
-CMD ["pnpm dev"]
+CMD ["npm dev"]
